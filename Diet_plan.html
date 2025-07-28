@@ -1,0 +1,302 @@
+<html>
+    <head>
+        <title>Diet Form</title>
+    </head>
+    <body>
+        <form action="Thankyou.html" method="get">
+            <ol type="1">
+                <li><p><b>Basic Information</b></p></li>
+                <ul type="circle">
+                    <li><label>Name : <input type="text" name="name" placeholder="Enter Name" required /> </label></li><br>
+                    <li><label>Age : <input type="number" name="age" min="18" max="80" placeholder="Enter Age" required/> </label></li><br>
+                    <li><label>Date of birth : <input type="date" name="dob" placeholder="Enter Date of Birt" /> </label></li><br>
+                    <li><label>Mobile number : <input type="tel" name="mobilenumber" pattern="[0-9]{10}" placeholder="Enter Mobile Number" required/></label></li><br>
+                    <li><label>Email : <input type="email" name="email" placeholder="Enter Email id" /></label></li>
+                    <li><label>Gender : <select name="gender" required>
+                        <option value="">-- Select age --</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select> </label></li><br>
+                    <li><label>height : <input type="number" value="feet" placeholder="Feet" min="3" max="12" required /> &nbsp; feet &nbsp; <input type="number" value="inches" placeholder="Incehs" min="0" max="12" required /> &nbsp; inches &nbsp;
+                    </label></li><br>
+                    <li><label>Weight : <input type="number" name="weight" value="weight" placeholder="Enter weight" min="30" max="150" required /> &nbsp; Kgs &nbsp; </label></li><br>
+                    <li><label>Goal : <select name="Goal" required>
+                        <option value="">-- Goal --</option>
+                        <option value="wl">Weight Loss</option>
+                        <option value="mg">Muscle Gain</option>
+                        <option value="ma">Maintenence</option>
+                        <option value="other">Other  <input type="message" /></option>
+                    </select></label></li><br>
+                    <li><label>Activity Level : <select name="Goal" required>
+                        <option value="">-- Activity --</option>
+                        <option value="se">Sedentary</option>
+                        <option value="la">Lightly Active</option>
+                        <option value="mo">Moderately</option>
+                        <option value="va">Very Active</option>
+                    </select></label></li>
+                </ul>
+                <li><p><b>Calorie & Macronutrient Goals</b></p></li>
+                <ul type="circle">
+                    <li><label>Daily Calorie Target (kcal) : <input type="number" min="1600" max="3000" required /></label></li><br>
+                    <li><label>Macronutrients :<br><br> <ul type="square">
+                        <li>Protiens (g) : <input type="number" min="40" max="300" required/></li><br>
+                        <li>Carbohydrate (g) : <input type="number" min="50" max="1000" required/></li><br>
+                        <li>Fats (g) : <input type="number" min="30" max="150" required/></li><br>
+                    </ul></label></li>
+                    <li><label>Water Intake Goals : <input type="number" min="1.5" max="4.5" required /> &nbsp; L/day</label></li>
+                </ul>
+                <li><p><b>Meal Schedule : </b></p></li>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Meal</th>
+                            <th><input type="radio" id="veg" name="foodtype" value="veg" /><label for="veg"> Veg Options </label></th>
+                            <th><input type="radio" id="non-veg" name="foodtype" value="non-veg" /><label for="non-veg"> Non-Veg Options </label></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="time" name="time_breakfast" required/></td>
+                            <td>Breakfast</td>
+                            <td>
+                                <label><input type="checkbox" name="veg" value="oats" />Oats</label>
+                                <label><input type="checkbox" name="veg" value="Poha" />Poha</label>
+                                <label><input type="checkbox" name="veg" value="Upma" />Upma</label>
+                                <label><input type="checkbox" name="veg" value="Paratha" />Vegetable Paratha</label>
+                                <label><input type="checkbox" name="veg" value="sandwich" />Paneer Sandwich</label>
+                                <label><input type="checkbox" name="veg" value="moong" />Moong chilla</label>
+                                <label><input type="checkbox" name="veg" value="smoothie" />Smoothie</label>
+                            </td>
+                            <td>
+                                <label><input type="checkbox" name="non-veg" value="eggs" /><select><option>Boiled</option><option>Omlete</option></select></label>
+                                <label><input type="checkbox" name="non-veg" value="chicken" />Chicken Sausage</label>
+                                <label><input type="checkbox" name="non-veg" value="tuna" />Tuna Toast</label>
+                                <label><input type="checkbox" name="non-veg" value="smoothie" />Protien Smoothie with Milk</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="time" name="time_snack1" required/></td>
+                            <td>Mid_Morning Snack</td>
+                            <td>
+                                <label><input type="checkbox" name="veg" value="fruit" /><select><option>apple</option><option>Banana</option><option>Orange</option></select></label>
+                                <label><input type="checkbox" name="veg" value="nuts" />Nuts</label>
+                                <label><input type="checkbox" name="veg" value="buttermilk" />buttermilk</label>
+                                <label><input type="checkbox" name="veg" value="Coconut" />Coconut Water</label>
+                            </td>
+                            <td>
+                                <label><input type="checkbox" name="non-veg" value="eggs" /><select><option>Boiled</option><option>Omlete</option></select></label>
+                                <label><input type="checkbox" name="non-veg" value="yogurt" />Greek Yogurt</label>
+                                <label><input type="checkbox" name="non-veg" value="Cheese" />Cheese Cubes</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="time" name="time_lunch" required/></td>
+                            <td>Lunch</td>
+                            <td>
+                                <label><input type="checkbox" name="veg" value="Rice" />Rice</label>
+                                <label><input type="checkbox" name="veg" value="Sabzi" />Sabzi</label>
+                                <label><input type="checkbox" name="veg" value="curry" /><select><option>Panner Curry</option><option>Dal</option><option>Mushroom Curry</option><option>Other</option></select></label>
+                                <label><input type="checkbox" name="veg" value="tofu" />Tofu stir fry</label>
+                                <label><input type="checkbox" name="veg" value="bowl" />Quinoa bowl</label>
+                            </td>
+                            <td>
+                                <label><input type="checkbox" name="non-veg" value="curry" /><select><option>Egg Curry</option><option>Fish Curry</option><option>Chicken Curry</option></select></label>
+                                <label><input type="checkbox" name="non-veg" value="chicken" />Grilled Chicken Breast</label>
+                                <label><input type="checkbox" name="non-veg" value="salad" />Chicken Salad</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="time" name="time_snack2" required/></td>
+                            <td>Evening Snacks</td>
+                            <td>
+                                <label><input type="checkbox" name="veg" value="chaat" />Sprouts Chaat</label>
+                                <label><input type="checkbox" name="veg" value="Sandwich" />Paneer Sandwich</label>
+                                <label><input type="checkbox" name="veg" value="protien" />Protien Bar</label>
+                                <label><input type="checkbox" name="veg" value="fruits" />Fruits with Peanutbutter</label>
+                            </td>
+                            <td>
+                                <label><input type="checkbox" name="non-veg" value="eggs" /><select><option>Boiled Egg Whites</option><option>Omlete</option></select></label>
+                                <label><input type="checkbox" name="non-veg" value="chicken" />Chicken Roll</label>
+                                <label><input type="checkbox" name="non-veg" value="tuna" />Tuna Salad</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="time" name="time_dinner" required/></td>
+                            <td>Dinner</td>
+                            <td>
+                                <label><input type="checkbox" name="veg" value="curry" /><select><option>Mixed Veg Curry</option><option>Sambar</option><option>Dal</option></select></label>
+                                <label><input type="checkbox" name="veg" value="kichidi" />Kichidi</label>
+                                <label><input type="checkbox" name="veg" value="tofu" />Tofu Curry</label>
+                                <label><input type="checkbox" name="veg" value="fry" />Veg Stir fry</label>
+                                <label><input type="checkbox" name="veg" value="dalia" />Dalia</label>
+                            /td>
+                            <td>
+                                <label><input type="checkbox" name="non-veg" value="fish" />Grilled Fish</label>
+                                <label><input type="checkbox" name="non-veg" value="soup" /><select><option>Chicken Soup</option><option>Mutton Soup</option></select>></label>
+                                <label><input type="checkbox" name="non-veg" value="egg" />Omlette</label>
+                                <label><input type="checkbox" name="non-veg" value="baked" />Baked chicken with veggies</label>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td><input type="time" name="time_snacks3" /></td>
+                            <td>Optional Snacks</td>
+                            <td>
+                                <label><input type="checkbox" name="veg" value="drinks" /><select><option>Herbal Tea</option><option>Almond Milk</option><option>Warm Turmeric Milk</option></select></label>
+                                <label><input type="checkbox" name="veg" value="protien" />Casein Protien</label>
+                                <label><input type="checkbox" name="veg" value="makhana" />Roasted Makhana</label>
+                            </td>
+                            <td>
+                                <label><input type="checkbox" name="non-veg" value="eggs" />Egg White Omlette</label>
+                                <label><input type="checkbox" name="non-veg" value="soup" />Bone broth soup</label>
+                                <label><input type="checkbox" name="non-veg" value="shake" />Protien Shake</label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <li><p><b>Weekly Plan Variation</b></p></li>
+                <table>
+                    <thead>
+                        <tr>Day</tr>
+                        <tr>Special Notes</tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                           <td> Monday </td>
+                        <td><select>
+                            <option>Select meals</option>
+                            <option>Workout + Regular meals</option>
+                            <option>Low-carb day</option>
+                            <option>Intermittent fasting (16:8)</option>
+                            <option>Strength training + normal carb intake</option>
+                            <option>Outdoor cardio session</option>
+                            <option>Refeed day (slightly higher carbs)</option>
+                            <option>Rest day + lighter meals, focus on hydration</option>
+                        </select></td>
+                        </tr>
+                        <tr>
+                           <td> Tuesday </td>
+                        <td><select>
+                            <option>Select meals</option>
+                            <option>Workout + Regular meals</option>
+                            <option>Low-carb day</option>
+                            <option>Intermittent fasting (16:8)</option>
+                            <option>Strength training + normal carb intake</option>
+                            <option>Outdoor cardio session</option>
+                            <option>Refeed day (slightly higher carbs)</option>
+                            <option>Rest day + lighter meals, focus on hydration</option>
+                        </select></td>
+                        </tr>
+                        <tr>
+                            <td> Wednesday </td>
+                        <td><select>
+                            <option>Select meals</option>
+                            <option>Workout + Regular meals</option>
+                            <option>Low-carb day</option>
+                            <option>Intermittent fasting (16:8)</option>
+                            <option>Strength training + normal carb intake</option>
+                            <option>Outdoor cardio session</option>
+                            <option>Refeed day (slightly higher carbs)</option>
+                            <option>Rest day + lighter meals, focus on hydration</option>
+                        </select></td>
+                        </tr>
+                        <tr>
+                            <td> Thursday </td>
+                        <td><select>
+                            <option>Select meals</option>
+                            <option>Workout + Regular meals</option>
+                            <option>Low-carb day</option>
+                            <option>Intermittent fasting (16:8)</option>
+                            <option>Strength training + normal carb intake</option>
+                            <option>Outdoor cardio session</option>
+                            <option>Refeed day (slightly higher carbs)</option>
+                            <option>Rest day + lighter meals, focus on hydration</option>
+                        </select></td>
+                        </tr>
+                        <tr>
+                            <td> Friday </td>
+                        <td><select>
+                            <option>Select meals</option>
+                            <option>Workout + Regular meals</option>
+                            <option>Low-carb day</option>
+                            <option>Intermittent fasting (16:8)</option>
+                            <option>Strength training + normal carb intake</option>
+                            <option>Outdoor cardio session</option>
+                            <option>Refeed day (slightly higher carbs)</option>
+                            <option>Rest day + lighter meals, focus on hydration</option>
+                        </select></td>
+                        </tr>
+                        <tr>
+                            <td> Saturday </td>
+                        <td><select>
+                            <option>Select meals</option>
+                            <option>Workout + Regular meals</option>
+                            <option>Low-carb day</option>
+                            <option>Intermittent fasting (16:8)</option>
+                            <option>Strength training + normal carb intake</option>
+                            <option>Outdoor cardio session</option>
+                            <option>Refeed day (slightly higher carbs)</option>
+                            <option>Rest day + lighter meals, focus on hydration</option>
+                        </select></td>
+                        </tr>
+                        <tr>
+                           <td> Sunday </td>
+                        <td><select>
+                            <option>Select meals</option>
+                            <option>Workout + Regular meals</option>
+                            <option>Low-carb day</option>
+                            <option>Intermittent fasting (16:8)</option>
+                            <option>Strength training + normal carb intake</option>
+                            <option>Outdoor cardio session</option>
+                            <option>Refeed day (slightly higher carbs)</option>
+                            <option>Rest day + lighter meals, focus on hydration</option>
+                        </select></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <li><p><b> Supplements </b></p></li>
+                <table>
+                    <thead>
+                        <th>Spplement</th>
+                        <th>Dosage</th>
+                        <th>Time to take</th>
+                        <th>Purpose</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" /></td>
+                            <td><input type="text" /></td>
+                            <td><input type="text" /></td>
+                            <td><input type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" /></td>
+                            <td><input type="text" /></td>
+                            <td><input type="text" /></td>
+                            <td><input type="text" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <li><p><b>Additional Notes</b></p></li>
+                <ul type="square">
+                    <li><label>Cheat meal frequency/strategy</label><br>
+                        <input type="text" />
+                    </li><br>
+                    <li>
+                        <label>Intermittent fasting hours :</label><br>
+                        <input type="text" />
+                    </li><br>
+                    <li>
+                        <label>Physical activity details :</label><br>
+                        <input type="text" />
+                    </li><br>
+                    <li>
+                        <label>Sleep goal (hours) :</label><br>
+                        <input type="text" />
+                    </li><br>
+                </ul>
+            </ol><br>
+            <input type="submit" />
+        </form>
+    </body>
+</html>
