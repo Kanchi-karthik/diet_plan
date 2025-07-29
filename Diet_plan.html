@@ -3,12 +3,13 @@
         <title>Diet Form</title>
     </head>
     <body>
-        <form action="Thankyou.html" method="get">
+        <form action="congrats.html" method="get">
+            <center><h1><i>Diet Plan</i></h1></center><br><hr><br>
             <ol type="1">
-                <li><p><b>Basic Information</b></p></li>
+                <li><p><b>Basic Information :</b></p></li>
                 <ul type="circle">
                     <li><label>Name : <input type="text" name="name" placeholder="Enter Name" required /> </label></li><br>
-                    <li><label>Age : <input type="number" name="age" min="18" max="80" placeholder="Enter Age" required/> </label></li><br>
+                    <li><label>Age : <input type="number" name="age" min="18" max="80" placeholder="Age" required/> </label></li><br>
                     <li><label>Date of birth : <input type="date" name="dob" placeholder="Enter Date of Birt" /> </label></li><br>
                     <li><label>Mobile number : <input type="tel" name="mobilenumber" pattern="[0-9]{10}" placeholder="Enter Mobile Number" required/></label></li><br>
                     <li><label>Email : <input type="email" name="email" placeholder="Enter Email id" /></label></li>
@@ -19,7 +20,7 @@
                     </select> </label></li><br>
                     <li><label>height : <input type="number" value="feet" placeholder="Feet" min="3" max="12" required /> &nbsp; feet &nbsp; <input type="number" value="inches" placeholder="Incehs" min="0" max="12" required /> &nbsp; inches &nbsp;
                     </label></li><br>
-                    <li><label>Weight : <input type="number" name="weight" value="weight" placeholder="Enter weight" min="30" max="150" required /> &nbsp; Kgs &nbsp; </label></li><br>
+                    <li><label>Weight : <input type="number" name="weight" value="weight" placeholder="Weight" min="30" max="150" required /> &nbsp; Kgs &nbsp; </label></li><br>
                     <li><label>Goal : <select name="Goal" required>
                         <option value="">-- Goal --</option>
                         <option value="wl">Weight Loss</option>
@@ -35,7 +36,7 @@
                         <option value="va">Very Active</option>
                     </select></label></li>
                 </ul>
-                <li><p><b>Calorie & Macronutrient Goals</b></p></li>
+                <li><p><b>Calorie & Macronutrient Goals :</b></p></li>
                 <ul type="circle">
                     <li><label>Daily Calorie Target (kcal) : <input type="number" min="1600" max="3000" required /></label></li><br>
                     <li><label>Macronutrients :<br><br> <ul type="square">
@@ -130,7 +131,7 @@
                                 <label><input type="checkbox" name="veg" value="tofu" />Tofu Curry</label>
                                 <label><input type="checkbox" name="veg" value="fry" />Veg Stir fry</label>
                                 <label><input type="checkbox" name="veg" value="dalia" />Dalia</label>
-                            /td>
+                            </td>
                             <td>
                                 <label><input type="checkbox" name="non-veg" value="fish" />Grilled Fish</label>
                                 <label><input type="checkbox" name="non-veg" value="soup" /><select><option>Chicken Soup</option><option>Mutton Soup</option></select>></label>
@@ -154,7 +155,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <li><p><b>Weekly Plan Variation</b></p></li>
+                <li><p><b>Weekly Plan Variation :</b></p></li>
                 <table>
                     <thead>
                         <tr>Day</tr>
@@ -254,7 +255,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <li><p><b> Supplements </b></p></li>
+                <li><p><b> Supplements :</b></p></li>
                 <table>
                     <thead>
                         <th>Spplement</th>
@@ -277,7 +278,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <li><p><b>Additional Notes</b></p></li>
+                <li><p><b>Additional Notes :</b></p></li>
                 <ul type="square">
                     <li><label>Cheat meal frequency/strategy</label><br>
                         <input type="text" />
@@ -296,7 +297,7 @@
                     </li><br>
                 </ul>
             </ol><br>
-            <input type="submit" />
+            <center><input type="submit" /></center>
         </form>
     </body>
 </html>
