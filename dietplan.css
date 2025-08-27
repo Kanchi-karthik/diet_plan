@@ -1,0 +1,147 @@
+/* Basic body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #a8d5ba;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+header .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header .nav-links a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 15px;
+}
+
+header .nav-links a:hover {
+    color: #006400;
+}
+
+/* Form container */
+#diet_form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Fieldsets */
+fieldset {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+legend {
+    font-weight: bold;
+}
+
+/* Inputs and selects */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+select,
+input[type="range"] {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Range value display */
+#energyValue {
+    font-weight: bold;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #a8d5ba;
+}
+
+/* Submit button */
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #a8d5ba;
+    border-radius: 5px;
+}
+
+/* Simple responsive adjustments */
+@media (max-width: 768px) {
+    header .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header .nav-links {
+        margin-top: 10px;
+    }
+
+    header .nav-links a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    /* Make tables scrollable on small screens */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    input[type="time"],
+    select,
+    input[type="range"] {
+        width: 100%;
+    }
+}

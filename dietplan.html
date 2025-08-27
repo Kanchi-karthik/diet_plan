@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Plan</title>
+    <link rel="stylesheet" href="./dietplan.css" />
+</head>
+<body>
+    <header>
+    <div class="header-container">
+        <div class="logo">Healthy Diet</div>
+        <div class="nav-links">
+            <a href="#personal-details">Personal Info</a>
+            <a href="#diet-goal">Diet Goals</a>
+            <a href="#meal_table">Meal Preferences</a>
+            <a href="#weekly-plan">Weekly Plan</a>
+            <a href="#supplements">Supplements</a>
+            <a href="#additional-notes">Additional Notes</a>
+        </div>
+    </div>
+</header>
+
+
+    <div id="diet_form">
+    <form id="diet-form" action="greeting.html" method="get">
+        <!-- Personal Details -->
+        <fieldset id="personal-details">
+            <legend>Personal Information</legend>
+            <label for="name">Name</label>
+            <input type="text" aria-label="Name" id="name" name="name" placeholder="Enter Your Name" required/><br/>
+            <label for="age">Age</label>
+            <input type="number" aria-label="Age" id="age" min="18" max="99" name="age" placeholder="Enter Your Age" required/><br/>
+            <label for="dob">Date of birth</label>
+            <input type="date" aria-label="Date of birth" id="dob" name="dob" required/><br/>
+            <label for="height">Height</label>
+            <input type="number" aria-label="Height" id="height" name="height" placeholder="Enter height" required/><br/>
+            <label for="weight">Weight</label>
+            <input type="number" aria-label="Weight" id="weight" name="weight" placeholder="Enter your weight" /><br/>
+        </fieldset>
+
+        <!-- Diet Goals -->
+        <fieldset id="diet-goal">
+            <legend>Select Your Diet Goals</legend>
+
+            <section aria-label="Weight Management Goals">
+                <h4>Weight Management</h4>
+                <label><input type="radio" name="weight_goal" value="loss" required> Weight Loss</label><br/>
+                <label><input type="radio" name="weight_goal" value="gain"> Weight Gain</label><br/>
+                <label><input type="radio" name="weight_goal" value="maintain"> Maintenance</label>
+            </section>
+            <br/>
+
+            <section aria-label="Body Composition Goals">
+                <h4>Body Composition</h4>
+                <label><input type="checkbox" name="body_goal[]" value="muscle" > Muscle Gain</label><br/>
+                <label><input type="checkbox" name="body_goal[]" value="fat_loss"> Fat Loss</label><br/>
+                <label><input type="checkbox" name="body_goal[]" value="toning"> Toning & Definition</label>
+            </section>
+            <br/>
+
+            <section aria-label="Health-Oriented Goals">
+                <h4>Health-Oriented Goals</h4>
+                <label for="health_goal" class="visually-hidden">Choose a health goal</label>
+                <select name="health_goal[]" id="health_goal" aria-label="Select a health goal" multiple required>
+                    <option value="">-- Select a health goal --</option>
+                    <option value="heart">Improve Heart Health</option>
+                    <option value="cholesterol">Lower Cholesterol / Blood Pressure</option>
+                    <option value="diabetes">Manage Diabetes</option>
+                    <option value="digestion">Improve Digestion / Gut Health</option>
+                </select>
+            </section>
+            <br/>
+
+            <section aria-label="Lifestyle Goals">
+                <h4>Lifestyle Goals</h4>
+                <label for="energy">Select Your Energy Level:</label>
+                <input type="range" id="energy" name="energy_level" min="1" max="10" value="5"
+                oninput="document.getElementById('energyValue').textContent = this.value" required>
+                <span id="energyValue">5</span><br/><br/>
+
+                <label><input type="checkbox" name="sleep" value="better_sleep"> Better Sleep Support</label><br/>
+                <label><input type="checkbox" name="stress" value="stress_reduction"> Stress Reduction</label>
+            </section>
+            <br/>
+
+            <section aria-label="Special Diet Preferences">
+                <h4>Special Diet Preferences</h4>
+                <label for="diet_preferences" class="visually-hidden">Choose diet preferences</label>
+                <select name="diet_preferences[]" id="diet_preferences" multiple size="5" aria-label="Select special diet preferences" required>
+                    <option value="vegan">Vegan / Plant-Based</option>
+                    <option value="keto">Keto / Low Carb</option>
+                    <option value="high_protein">High Protein</option>
+                    <option value="gluten_free">Gluten-Free</option>
+                    <option value="dairy_free">Dairy-Free</option>
+                    <option value="fasting">Intermittent Fasting</option>
+                </select>
+            </section>
+            <br/>
+
+            <section aria-label="Custom Diet Goal">
+                <h4>Other</h4>
+                <label for="other">Custom Goal:</label>
+                <input type="text" id="other" name="other_goal" placeholder="Enter custom goal" aria-label="Enter custom diet goal">
+            </section>
+        </fieldset>
+
+        <!-- Meal Preferences -->
+        <fieldset>
+            <legend>Meal Schedule & Preferences</legend>
+            <table id="meal_table"> 
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Meal</th>
+                        <th>Veg Options</th>
+                        <th>Non-Veg Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Breakfast -->
+        <tr>
+          <td><input type="time" name="time_breakfast" aria-label="Breakfast Time" required></td>
+          <td>Breakfast</td>
+          <td>
+            <label><input type="checkbox" name="breakfast_veg[]" value="oats"> Oats</label>
+            <label><input type="checkbox" name="breakfast_veg[]" value="poha"> Poha</label>
+            <label><input type="checkbox" name="breakfast_veg[]" value="upma"> Upma</label>
+            <label><input type="checkbox" name="breakfast_veg[]" value="paratha"> Vegetable Paratha</label>
+            <label><input type="checkbox" name="breakfast_veg[]" value="smoothie"> Smoothie</label>
+            <label><input type="checkbox" name="breakfast_veg[]" value="other"> Other:
+              <input type="text" name="breakfast_veg_other" placeholder="Specify other">
+            </label>
+          </td>
+          <td>
+            <label><input type="checkbox" name="breakfast_nonveg[]" value="eggs"> Eggs</label>
+            <label><input type="checkbox" name="breakfast_nonveg[]" value="chicken_sausage"> Chicken Sausage</label>
+            <label><input type="checkbox" name="breakfast_nonveg[]" value="tuna_toast"> Tuna Toast</label>
+            <label><input type="checkbox" name="breakfast_nonveg[]" value="protein_smoothie"> Protein Smoothie</label>
+            <label><input type="checkbox" name="breakfast_nonveg[]" value="other"> Other:
+              <input type="text" name="breakfast_nonveg_other" placeholder="Specify other">
+            </label>
+          </td>
+        </tr>
+
+        <!-- Mid-Morning Snack -->
+        <tr>
+          <td><input type="time" name="time_snack1" aria-label="Mid-Morning Snack Time" required></td>
+          <td>Mid-Morning Snack</td>
+          <td>
+            <label><input type="checkbox" name="snack1_veg[]" value="fruit"> Fruit
+              <select name="snack1_fruit_select">
+                <option>-- Select Fruit --</option>
+                <option>Apple</option>
+                <option>Banana</option>
+                <option>Orange</option>
+              </select>
+            </label>
+            <label><input type="checkbox" name="snack1_veg[]" value="nuts"> Nuts</label>
+            <label><input type="checkbox" name="snack1_veg[]" value="buttermilk"> Buttermilk</label>
+            <label><input type="checkbox" name="snack1_veg[]" value="coconut_water"> Coconut Water</label>
+            <label><input type="checkbox" name="snack1_veg[]" value="other"> Other:
+              <input type="text" name="snack1_veg_other" placeholder="Specify other">
+            </label>
+          </td>
+          <td>
+            <label><input type="checkbox" name="snack1_nonveg[]" value="eggs"> Eggs
+              <select name="snack1_eggs_select">
+                <option>Boiled</option>
+                <option>Omlette</option>
+              </select>
+            </label>
+            <label><input type="checkbox" name="snack1_nonveg[]" value="yogurt"> Greek Yogurt</label>
+            <label><input type="checkbox" name="snack1_nonveg[]" value="cheese"> Cheese Cubes</label>
+            <label><input type="checkbox" name="snack1_nonveg[]" value="other"> Other:
+              <input type="text" name="snack1_nonveg_other" placeholder="Specify other">
+            </label>
+          </td>
+        </tr>
+
+        <!-- Lunch -->
+        <tr>
+          <td><input type="time" name="time_lunch" aria-label="Lunch Time" required></td>
+          <td>Lunch</td>
+          <td>
+            <label><input type="checkbox" name="lunch_veg[]" value="rice"> Rice</label>
+            <label><input type="checkbox" name="lunch_veg[]" value="dal"> Dal</label>
+            <label><input type="checkbox" name="lunch_veg[]" value="paneer_curry"> Paneer Curry</label>
+            <label><input type="checkbox" name="lunch_veg[]" value="quinoa_bowl"> Quinoa Bowl</label>
+            <label><input type="checkbox" name="lunch_veg[]" value="other"> Other:
+              <input type="text" name="lunch_veg_other" placeholder="Specify other">
+            </label>
+          </td>
+          <td>
+            <label><input type="checkbox" name="lunch_nonveg[]" value="chicken_curry"> Chicken Curry</label>
+            <label><input type="checkbox" name="lunch_nonveg[]" value="grilled_chicken"> Grilled Chicken</label>
+            <label><input type="checkbox" name="lunch_nonveg[]" value="fish_curry"> Fish Curry</label>
+            <label><input type="checkbox" name="lunch_nonveg[]" value="egg_curry"> Egg Curry</label>
+            <label><input type="checkbox" name="lunch_nonveg[]" value="other"> Other:
+              <input type="text" name="lunch_nonveg_other" placeholder="Specify other">
+            </label>
+          </td>
+        </tr>
+
+        <!-- Evening Snack -->
+        <tr>
+          <td><input type="time" name="time_snack2" aria-label="Evening Snack Time" required></td>
+          <td>Evening Snack</td>
+          <td>
+            <label><input type="checkbox" name="snack2_veg[]" value="fruit"> Fruit</label>
+            <label><input type="checkbox" name="snack2_veg[]" value="sprouts_chaat"> Sprouts Chaat</label>
+            <label><input type="checkbox" name="snack2_veg[]" value="sandwich"> Paneer Sandwich</label>
+            <label><input type="checkbox" name="snack2_veg[]" value="protein_bar"> Protein Bar</label>
+            <label><input type="checkbox" name="snack2_veg[]" value="other"> Other:
+              <input type="text" name="snack2_veg_other" placeholder="Specify other">
+            </label>
+          </td>
+          <td>
+            <label><input type="checkbox" name="snack2_nonveg[]" value="eggs"> Eggs</label>
+            <label><input type="checkbox" name="snack2_nonveg[]" value="chicken_roll"> Chicken Roll</label>
+            <label><input type="checkbox" name="snack2_nonveg[]" value="tuna_salad"> Tuna Salad</label>
+            <label><input type="checkbox" name="snack2_nonveg[]" value="other"> Other:
+              <input type="text" name="snack2_nonveg_other" placeholder="Specify other">
+            </label>
+          </td>
+        </tr>
+
+        <!-- Dinner -->
+        <tr>
+          <td><input type="time" name="time_dinner" aria-label="Dinner Time" required></td>
+          <td>Dinner</td>
+          <td>
+            <label><input type="checkbox" name="dinner_veg[]" value="veg_curry"> Veg Curry</label>
+            <label><input type="checkbox" name="dinner_veg[]" value="kichidi"> Kichidi</label>
+            <label><input type="checkbox" name="dinner_veg[]" value="tofu_curry"> Tofu Curry</label>
+            <label><input type="checkbox" name="dinner_veg[]" value="veg_fry"> Veg Stir Fry</label>
+            <label><input type="checkbox" name="dinner_veg[]" value="other"> Other:
+              <input type="text" name="dinner_veg_other" placeholder="Specify other">
+            </label>
+          </td>
+          <td>
+            <label><input type="checkbox" name="dinner_nonveg[]" value="grilled_fish"> Grilled Fish</label>
+            <label><input type="checkbox" name="dinner_nonveg[]" value="chicken_soup"> Chicken Soup</label>
+            <label><input type="checkbox" name="dinner_nonveg[]" value="baked_chicken"> Baked Chicken</label>
+            <label><input type="checkbox" name="dinner_nonveg[]" value="egg_omlette"> Egg Omlette</label>
+            <label><input type="checkbox" name="dinner_nonveg[]" value="other"> Other:
+              <input type="text" name="dinner_nonveg_other" placeholder="Specify other">
+            </label>
+          </td>
+        </tr>
+
+        <!-- Optional Snack -->
+        <tr>
+          <td><input type="time" name="time_snack3" aria-label="Optional Snack Time"></td>
+          <td>Optional Snack</td>
+          <td>
+            <label><input type="checkbox" name="snack3_veg[]" value="herbal_tea"> Herbal Tea</label>
+            <label><input type="checkbox" name="snack3_veg[]" value="almond_milk"> Almond Milk</label>
+            <label><input type="checkbox" name="snack3_veg[]" value="roasted_makhana"> Roasted Makhana</label>
+            <label><input type="checkbox" name="snack3_veg[]" value="other"> Other:
+              <input type="text" name="snack3_veg_other" placeholder="Specify other">
+            </label>
+          </td>
+          <td>
+    <!-- Non-Veg Options -->
+    <label><input type="checkbox" name="snack3_nonveg[]" value="boiled_eggs"> Boiled Eggs</label>
+    <label><input type="checkbox" name="snack3_nonveg[]" value="chicken_slices"> Grilled Chicken Slices</label>
+    <label><input type="checkbox" name="snack3_nonveg[]" value="fish_pieces"> Baked Fish Pieces</label>
+    <label><input type="checkbox" name="snack3_nonveg[]" value="protein_shake"> Whey Protein Shake</label>
+    <label><input type="checkbox" name="snack3_nonveg[]" value="other"> Other:
+      <input type="text" name="snack3_nonveg_other" placeholder="Specify other">
+    </label>
+  </td>
+          </tr>
+                </tbody>
+            </table>
+        </fieldset>
+
+        <!-- Weekly Plan Variation -->
+<fieldset id="weekly-plan">
+    <legend><b>Weekly Plan Variation</b></legend>
+    <table id="week_plan_table">
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Special Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Monday</td>
+                <td>
+                    <select aria-label="weekly-monday Plan">
+                        <option>Select meals</option>
+                        <option>Workout + Regular meals</option>
+                        <option>Low-carb day</option>
+                        <option>Intermittent fasting (16:8)</option>
+                        <option>Strength training + normal carb intake</option>
+                        <option>Outdoor cardio session</option>
+                        <option>Refeed day (slightly higher carbs)</option>
+                        <option>Rest day + lighter meals, focus on hydration</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Tuesday</td>
+                <td>
+                    <select aria-label="weekly-tuesday-plan">
+                        <option>Select meals</option>
+                        <option>Workout + Regular meals</option>
+                        <option>Low-carb day</option>
+                        <option>Intermittent fasting (16:8)</option>
+                        <option>Strength training + normal carb intake</option>
+                        <option>Outdoor cardio session</option>
+                        <option>Refeed day (slightly higher carbs)</option>
+                        <option>Rest day + lighter meals, focus on hydration</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>
+                    <select aria-label="weekly-wednesday-plan">
+                        <option>Select meals</option>
+                        <option>Workout + Regular meals</option>
+                        <option>Low-carb day</option>
+                        <option>Intermittent fasting (16:8)</option>
+                        <option>Strength training + normal carb intake</option>
+                        <option>Outdoor cardio session</option>
+                        <option>Refeed day (slightly higher carbs)</option>
+                        <option>Rest day + lighter meals, focus on hydration</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Thursday</td>
+                <td>
+                    <select aria-label="weekly-thursday-plan">
+                        <option>Select meals</option>
+                        <option>Workout + Regular meals</option>
+                        <option>Low-carb day</option>
+                        <option>Intermittent fasting (16:8)</option>
+                        <option>Strength training + normal carb intake</option>
+                        <option>Outdoor cardio session</option>
+                        <option>Refeed day (slightly higher carbs)</option>
+                        <option>Rest day + lighter meals, focus on hydration</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td>
+                    <select aria-label="weekly-friday-plan">
+                        <option>Select meals</option>
+                        <option>Workout + Regular meals</option>
+                        <option>Low-carb day</option>
+                        <option>Intermittent fasting (16:8)</option>
+                        <option>Strength training + normal carb intake</option>
+                        <option>Outdoor cardio session</option>
+                        <option>Refeed day (slightly higher carbs)</option>
+                        <option>Rest day + lighter meals, focus on hydration</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Saturday</td>
+                <td>
+                    <select aria-label="weekly-saturday-plan">
+                        <option>Select meals</option>
+                        <option>Workout + Regular meals</option>
+                        <option>Low-carb day</option>
+                        <option>Intermittent fasting (16:8)</option>
+                        <option>Strength training + normal carb intake</option>
+                        <option>Outdoor cardio session</option>
+                        <option>Refeed day (slightly higher carbs)</option>
+                        <option>Rest day + lighter meals, focus on hydration</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Sunday</td>
+                <td>
+                    <select aria-label="weekly-sunday-plan">
+                        <option>Select meals</option>
+                        <option>Workout + Regular meals</option>
+                        <option>Low-carb day</option>
+                        <option>Intermittent fasting (16:8)</option>
+                        <option>Strength training + normal carb intake</option>
+                        <option>Outdoor cardio session</option>
+                        <option>Refeed day (slightly higher carbs)</option>
+                        <option>Rest day + lighter meals, focus on hydration</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</fieldset>
+
+<!-- Supplements -->
+<fieldset id="supplements">
+    <legend>Supplements</legend>
+    <table id="supplement_table">
+        <thead>
+            <tr>
+                <th>Supplement</th>
+                <th>Dosage</th>
+                <th>Time to take</th>
+                <th>Purpose</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input aria-label="Supplement name 1" type="text" name="supplement_name_1" /></td>
+                <td><input aria-label="Supplement dosage 1" type="text" name="supplement_dosage_1" /></td>
+                <td><input aria-label="Supplement time 1" type="text" name="supplement_time_1" /></td>
+                <td><input aria-label="Supplement Purpose 1" type="text" name="supplement_purpose_1" /></td>
+            </tr>
+            <tr>
+                <td><input aria-label="Supplement name 2" type="text" name="supplement_name_2" /></td>
+                <td><input aria-label="Supplement dosage 2" type="text" name="supplement_dosage_2" /></td>
+                <td><input aria-label="Supplement time 2" type="text" name="supplement_time_2" /></td>
+                <td><input aria-label="Supplement Purpose 2" type="text" name="supplement_purpose_2" /></td>
+            </tr>
+        </tbody>
+    </table>
+</fieldset>
+
+<!-- Additional Notes -->
+<fieldset id="additional-notes">
+    <legend>Additional Notes</legend>
+    <table>
+        <tr>
+            <td>Cheat meal frequency/strategy</td>
+            <td><input aria-label="meal-prefernce" type="text" name="cheat_meal_strategy" /></td>
+        </tr>
+        <tr>
+            <td>Intermittent fasting hours</td>
+            <td><input aria-label="intermittent-fasting-hours" type="text" name="fasting_hours" /></td>
+        </tr>
+        <tr>
+            <td>Physical activity details</td>
+            <td><input aria-label="activity-details" type="text" name="physical_activity" /></td>
+        </tr>
+        <tr>
+            <td>Sleep goal (hours)</td>
+            <td><input aria-label="sleep-goals" type="text" name="sleep_goal" /></td>
+        </tr>
+    </table>
+</fieldset>
+
+<!-- Submit Button -->
+<fieldset>
+    <input type="submit" value="Submit Plan" />
+</fieldset>
+    </form>
+    </div>
+
+    <footer>
+    <p>Created by: Kanchi Karthik</p>
+    <p>Student Project - Diet Plan Form</p>
+    </footer>
+</body>
+</html>
